@@ -11,7 +11,7 @@ import com.github.vindell.httpconn.exception.HttpResponseException;
 public class BinaryResponseHandler implements ResponseHandler<byte[]> {
 
 	@Override
-	public void handleConn(HttpURLConnection httpConn) {
+	public void preHandle(HttpURLConnection httpConn) {
 		
 	}
 	

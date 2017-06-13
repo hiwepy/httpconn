@@ -15,7 +15,7 @@ public interface ResponseHandler<T> {
 	 * 对HttpURLConnection进行预处理
 	 * @param httpConn
 	 */
-	void handleConn(HttpURLConnection httpConn);
+	void preHandle(HttpURLConnection httpConn);
 	
     /**
      * Processes an {@link OutputStream} and returns some value corresponding to that response.

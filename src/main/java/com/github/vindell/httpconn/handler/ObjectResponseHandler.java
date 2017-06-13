@@ -14,7 +14,7 @@ public class ObjectResponseHandler implements ResponseHandler<Object> {
 	protected XStream xstream = new XStream();
 	
 	@Override
-	public void handleConn(HttpURLConnection httpConn) {
+	public void preHandle(HttpURLConnection httpConn) {
 		
 	}
 	

@@ -12,7 +12,7 @@ import com.github.vindell.httpconn.exception.HttpResponseException;
 public class PlainTextResponseHandler implements ResponseHandler<String> {
 
 	@Override
-	public void handleConn(HttpURLConnection httpConn) {
+	public void preHandle(HttpURLConnection httpConn) {
 		
 	}
 

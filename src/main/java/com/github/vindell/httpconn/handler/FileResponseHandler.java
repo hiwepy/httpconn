@@ -20,7 +20,7 @@ public class FileResponseHandler implements ResponseHandler<File> {
 	}
 
 	@Override
-	public void handleConn(HttpURLConnection httpConn) {
+	public void preHandle(HttpURLConnection httpConn) {
 		
 	}
 	

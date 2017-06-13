@@ -3,14 +3,11 @@ package com.github.vindell.httpconn.exception;
 import java.io.IOException;
 
 /**
- * 
- * *******************************************************************
  * @className	： HttpResponseException
  * @description	： TODO(描述这个类的作用)
- * @author 		： <a href="mailto:hnxyhcwdl1003@163.com">vindell</a>
- * @date		： Dec 15, 2016 11:46:21 AM
- * @version 	V1.0 
- * *******************************************************************
+ * @author 		： <a href="https://github.com/vindell">vindell</a>
+ * @date		： 2017年6月13日 下午9:20:17
+ * @version 	V1.0
  */
 @SuppressWarnings("serial")
 public class HttpResponseException extends IOException {

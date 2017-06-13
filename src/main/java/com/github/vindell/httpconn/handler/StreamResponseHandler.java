@@ -11,13 +11,16 @@ import com.github.vindell.httpconn.exception.HttpResponseException;
 
 /**
  * 
- * @author Administrator
- *
+ * @className	： StreamResponseHandler
+ * @description	： TODO(描述这个类的作用)
+ * @author 		： <a href="https://github.com/vindell">vindell</a>
+ * @date		： 2017年6月13日 下午9:20:09
+ * @version 	V1.0
  */
 public class StreamResponseHandler implements ResponseHandler<ByteArrayInputStream> {
 
 	@Override
-	public void handleConn(HttpURLConnection httpConn) {
+	public void preHandle(HttpURLConnection httpConn) {
 		
 	}
 

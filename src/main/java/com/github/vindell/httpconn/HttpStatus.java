@@ -18,17 +18,13 @@ package com.github.vindell.httpconn;
 import java.net.HttpURLConnection;
 
 /**
- * 
- * *******************************************************************
  * @className	： HttpStatus
  * @description	：  Constants enumerating the HTTP status codes.
- * @author 		： <a href="mailto:hnxyhcwdl1003@163.com">vindell</a>
- * @date		： Dec 15, 2016 3:20:20 PM
- * @version 	V1.0 
- * *******************************************************************
+ * @author 		： <a href="https://github.com/vindell">vindell</a>
+ * @date		： 2017年6月13日 下午9:20:54
+ * @version 	V1.0
  */
 public class HttpStatus {
-
 
     // -------------------------------------------------------- Class Variables
 

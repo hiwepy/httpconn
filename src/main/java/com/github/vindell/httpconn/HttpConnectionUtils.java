@@ -220,7 +220,7 @@ public class HttpConnectionUtils {
 		HttpURLConnection httpConn = getHttpURLConnectionWithGet(baseURL, paramsMap, headers, charset);
 		try {
 			// 对HttpURLConnection进行预处理
-			handler.handleConn(httpConn);
+			handler.preHandle(httpConn);
 			// 处理最终的响应结果
 			return handler.handleResponse(httpConn, charset);
 		} finally {
@@ -257,7 +257,7 @@ public class HttpConnectionUtils {
 		HttpURLConnection httpConn = getHttpURLConnectionWithPost(baseURL, paramsMap, headers, contentType, charset);
 		try {
 			// 对HttpURLConnection进行预处理
-			handler.handleConn(httpConn);
+			handler.preHandle(httpConn);
 			// 处理最终的响应结果
 			return handler.handleResponse(httpConn, charset);
 		} finally {

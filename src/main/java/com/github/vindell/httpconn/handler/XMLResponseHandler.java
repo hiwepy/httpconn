@@ -18,20 +18,18 @@ import com.github.vindell.httpconn.exception.HttpResponseException;
 
 /**
  * 
- * @className: XMLResponseHandler
- * @description: http请求响应处理：返回org.w3c.dom.Document对象
- * @author : vindell
- * @date : 下午01:43:19 2015-7-14
- * @modify by:
- * @modify date :
- * @modify description :
+ * @className	： XMLResponseHandler
+ * @description	： http请求响应处理：返回org.w3c.dom.Document对象
+ * @author 		： <a href="https://github.com/vindell">vindell</a>
+ * @date		： 2017年6月13日 下午9:20:00
+ * @version 	V1.0
  */
 public class XMLResponseHandler implements ResponseHandler<Document> {
 
 	private DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 	
 	@Override
-	public void handleConn(HttpURLConnection httpConn) {
+	public void preHandle(HttpURLConnection httpConn) {
 		
 	}
 	

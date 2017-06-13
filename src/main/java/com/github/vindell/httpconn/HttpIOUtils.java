@@ -23,13 +23,11 @@ import java.net.URLConnection;
 
 /**
  * 
- * *******************************************************************
- * @className	： HttIOUtils
- * @description	： 扩展org.apache.commons.io.IOUtils工具对象
- * @author 		： <a href="mailto:hnxyhcwdl1003@163.com">vindell</a>
- * @date		： Dec 15, 2016 12:08:48 PM
- * @version 	V1.0 
- * *******************************************************************
+ * @className	： HttpIOUtils
+ * @description	：  扩展org.apache.commons.io.IOUtils工具对象
+ * @author 		： <a href="https://github.com/vindell">vindell</a>
+ * @date		： 2017年6月13日 下午9:20:40
+ * @version 	V1.0
  */
 public abstract class HttpIOUtils extends org.apache.commons.io.IOUtils{
 	
