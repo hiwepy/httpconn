@@ -166,5 +166,17 @@ public abstract class HttpIOUtils extends org.apache.commons.io.IOUtils{
     public static PrintStream toPrintStream(OutputStream output) {
         return isPrint(output) ? (PrintStream) output : new PrintStream(output);
     }
+    
+    public static String toInputText(InputStream input, String charset) throws IOException {
+		 InputStreamReader reader = null;
+		 try {
+			 reader = new InputStreamReader(input, charset);
+			 return HttpIOUtils.toString(reader);
+		} finally{
+			// 释放资源
+			HttpIOUtils.closeQuietly(input);
+			HttpIOUtils.closeQuietly(reader);
+		}
+    }
 	
 }

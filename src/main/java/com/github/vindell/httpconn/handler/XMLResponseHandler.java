@@ -56,6 +56,10 @@ public class XMLResponseHandler implements ResponseHandler<Document> {
 				HttpIOUtils.closeQuietly(reader);
 			}
 		} else {
+			String error = HttpIOUtils.toInputText(httpConn.getErrorStream(), charset);
+			if(error != null && error.trim().length() > 0) {
+				throw new HttpResponseException(status, error);
+			}
 			throw new HttpResponseException(status, HttpStatus.getStatusText(status));
 		}
     }
