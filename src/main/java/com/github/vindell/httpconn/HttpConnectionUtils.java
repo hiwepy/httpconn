@@ -16,10 +16,8 @@ import com.github.vindell.httpconn.handler.ResponseHandler;
 
 /**
  * 
- * @className	： HttpConnectionUtils
- * @description	：使用java内置HttpURLConnection对象进行get,post方式的请求
+ * 使用java内置HttpURLConnection对象进行get,post方式的请求
  * @author 		： <a href="mailto:hnxyhcwdl1003@163.com">vindell</a>
- * @date		： 2015-6-24 下午05:08:14
  * <pre>
  * 总结：
  * a:) HttpURLConnection的connect()函数，实际上只是建立了一个与服务器的tcp连接，并没有实际发送http请求。
