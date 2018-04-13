@@ -7,6 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Map;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -68,7 +69,7 @@ public class HttpConnectionUtils {
 	}
 	
 
-	public static HttpURLConnection getPreparedHttpURLConnection(HttpURLConnection httpConn,String method,String contentType,String charset) throws IOException {
+	public static HttpURLConnection getPreparedHttpURLConnection(HttpURLConnection httpConn,String method,Map<String, String> headers,String contentType,String charset) throws IOException {
 			    
         // 设定请求的方法为指定方法，默认是GET 
 	    httpConn.setRequestMethod(method);  
@@ -97,6 +98,14 @@ public class HttpConnectionUtils {
 	    httpConn.setRequestProperty(HttpHeaders.ACCEPT, "*/*");  
 	    httpConn.setRequestProperty(HttpHeaders.CONNECTION, "Keep-Alive");  
 		httpConn.setRequestProperty(HttpHeaders.USER_AGENT, "Mozilla/4.0 (compatible; MSIE 6.0; Windows 2000)");
+		
+		/*其他headers*/
+		if(headers != null) {
+			Set<String> keys = headers.keySet();
+			for (String key : keys) {
+				httpConn.setRequestProperty(key, headers.get(key));
+			}
+		}
 		/* 
 		 * 配置本次连接的Content-type，配置为application/x-www-form-urlencoded的
 		 * 意思是正文是urlencoded编码过的form参数，下面我们可以看到我们对正文内容使用URLEncoder.encode进行编码
@@ -137,7 +146,7 @@ public class HttpConnectionUtils {
 		URL urlGet = new URL(buildURL(baseURL,paramsMap));
 		// 此处的urlConnection对象实际上是根据URL的 请求协议(此处是http)生成的URLConnection类 的子类HttpURLConnection,故此处最好将其转化 为HttpURLConnection类型的对象,以便用到HttpURLConnection更多的API.如下: 
 		HttpURLConnection httpConn = (HttpURLConnection) urlGet.openConnection();
-						  httpConn = getPreparedHttpURLConnection( httpConn , "GET", ContentType.TEXT_PLAIN, charset);
+						  httpConn = getPreparedHttpURLConnection( httpConn , "GET", headers, ContentType.TEXT_PLAIN, charset);
 	    httpConn.connect();
 		return httpConn;
 	}
@@ -146,7 +155,7 @@ public class HttpConnectionUtils {
 		URL urlPost = new URL(baseURL);
 		// 此处的urlConnection对象实际上是根据URL的 请求协议(此处是http)生成的URLConnection类 的子类HttpURLConnection,故此处最好将其转化 为HttpURLConnection类型的对象,以便用到HttpURLConnection更多的API.如下: 
 		HttpURLConnection httpConn = (HttpURLConnection) urlPost.openConnection();
-						  httpConn = getPreparedHttpURLConnection( httpConn , "POST", contentType , charset);
+						  httpConn = getPreparedHttpURLConnection( httpConn , "POST", headers, contentType , charset);
 		/* 
 	        Post请求的OutputStream实际上不是网络流，而是写入内存，在 getInputStream中才真正把写道流里面的内容作为正文与根据之前的配置生成的http request头合并成真正的http request，并在此时才真正向服务器发送。
 	        HttpURLConnection.setChunkedStreamingMode函 数可以改变这个模式，设置了ChunkedStreamingMode后，不再等待OutputStream关闭后生成完整的http request一次过发送，而是先发送http request头，
