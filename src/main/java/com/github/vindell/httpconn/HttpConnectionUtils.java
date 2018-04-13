@@ -171,22 +171,27 @@ public class HttpConnectionUtils {
 	    	output.close(); 
 	    }else {
 	    	//组织参数内容
-			StringBuilder buffer = new StringBuilder();
-			if(paramsMap != null && paramsMap.size() > 0 ){
-				for (String key : paramsMap.keySet()) {
-					buffer.append("&").append(key).append("=").append(URLEncoder.encode(String.valueOf(paramsMap.get(key)), charset));
+			StringBuilder params = new StringBuilder();
+			boolean isfirst = true;
+			for (String key : paramsMap.keySet()) {
+				// 正文，正文内容其实跟get的URL中 '? '后的参数字符串一致
+				if(isfirst) {
+					params.append(key).append("=").append(URLEncoder.encode(String.valueOf(paramsMap.get(key)), charset));					
+					isfirst = false;
+				}else {
+					params.append("&").append(key).append("=").append(URLEncoder.encode(String.valueOf(paramsMap.get(key)), charset));	
 				}
-				buffer.deleteCharAt(0);
 			}
+			
 			// 获得上传信息的字节大小以及长度  
             //byte[] postdata = buffer.toString().getBytes();  
-	        httpConn.setRequestProperty(HttpHeaders.CONTENT_LENGTH, String.valueOf(buffer.length()));
+	        httpConn.setRequestProperty(HttpHeaders.CONTENT_LENGTH, String.valueOf(params.length()));
 	        // 连接，从urlPost.openConnection()至此的配置必须要在connect之前完成，要注意的是connection.getOutputStream会隐含的进行connect(即：如同调用上面的connect()方法，  所以在开发中不调用上述的connect()也可以)。 
 	        httpConn.connect();
 	    	//建立输入流，向指向的URL传入参数
 		    DataOutputStream output = new DataOutputStream(httpConn.getOutputStream());
 		    // DataOutputStream.writeBytes将字符串中的16位的unicode字符以8位的字符形式写到流里面
-		    output.writeBytes(buffer.toString());
+		    output.writeBytes(params.toString());
 		    //output.write(postdata , 0 , postdata.length );
 		    // flush输出流的缓冲  
 		    output.flush();
