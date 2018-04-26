@@ -22,12 +22,8 @@ import java.net.HttpURLConnection;
 import java.net.URLConnection;
 
 /**
- * 
- * @className	： HttpIOUtils
- * @description	：  扩展org.apache.commons.io.IOUtils工具对象
+ * 扩展org.apache.commons.io.IOUtils工具对象
  * @author 		： <a href="https://github.com/vindell">vindell</a>
- * @date		： 2017年6月13日 下午9:20:40
- * @version 	V1.0
  */
 public abstract class HttpIOUtils extends org.apache.commons.io.IOUtils{
 	

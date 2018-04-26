@@ -281,14 +281,10 @@ public class HttpConnectionUtils {
 	}
 	
 	/**
-	 * 
-	 * ******************************************************************
-	 * @description	： 在一次请求发送后获取SessionID
-	 * @author 		： <a href="mailto:hnxyhcwdl1003@163.com">vindell</a>
-	 * @date 		：Dec 15, 2016 2:53:57 PM
-	 * @param httpConn
+	 * 在一次请求发送后获取SessionID
+	 * @author 		： <a href="https://github.com/vindell">vindell</a>
+	 * @param httpConn HttpURLConnection对象
 	 * @return
-	 * ******************************************************************
 	 */
 	public static String getSessionID(HttpURLConnection httpConn){
 		// Get Session ID

@@ -10,12 +10,8 @@ import com.github.vindell.httpconn.HttpStatus;
 import com.github.vindell.httpconn.exception.HttpResponseException;
 
 /**
- * 
- * @className	： StreamResponseHandler
- * @description	： TODO(描述这个类的作用)
+ * TODO
  * @author 		： <a href="https://github.com/vindell">vindell</a>
- * @date		： 2017年6月13日 下午9:20:09
- * @version 	V1.0
  */
 public class StreamResponseHandler implements ResponseHandler<ByteArrayInputStream> {
 
