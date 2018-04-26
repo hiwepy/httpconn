@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.vindell</groupId>
 	<artifactId>httpconn</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.0.RELEASE</version>
 
 	<name>httpconn</name>
 	<description>HttpURLConnection Extend</description>
