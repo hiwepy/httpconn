@@ -17,12 +17,12 @@ package com.github.vindell.httpconn;
 
 import java.net.HttpURLConnection;
 
-import com.github.vindell.httpconn.HttpStatus;
+import org.junit.Test;
 
-import junit.framework.TestCase;
 
-public class HttpStatusTest extends TestCase {
+public class HttpStatusTest {
 	 
+	@Test
 	public void testStatus() {
 		
 		
