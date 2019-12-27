@@ -1,16 +1,16 @@
-package com.github.vindell.httpconn.handler;
+package com.github.hiwepy.httpconn.handler;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
 
 import com.alibaba.fastjson.JSONObject;
-import com.github.vindell.httpconn.HttpIOUtils;
-import com.github.vindell.httpconn.HttpStatus;
-import com.github.vindell.httpconn.exception.HttpResponseException;
+import com.github.hiwepy.httpconn.HttpIOUtils;
+import com.github.hiwepy.httpconn.HttpStatus;
+import com.github.hiwepy.httpconn.exception.HttpResponseException;
 
 /**
  * http请求响应处理：返回JSONObject对象
- * @author 		： <a href="https://github.com/vindell">vindell</a>
+ * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
  */
 public class JSONResponseHandler implements ResponseHandler<JSONObject> {
 

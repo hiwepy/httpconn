@@ -1,4 +1,4 @@
-package com.github.vindell.httpconn.handler;
+package com.github.hiwepy.httpconn.handler;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -20,7 +20,7 @@ public interface ResponseHandler<T> {
     /**
      * 
      * Processes an {@link OutputStream} and returns some value corresponding to that response.
-     * @author 		： <a href="https://github.com/vindell">vindell</a>
+     * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
      * @param httpConn {@link java.net.HttpURLConnection} 对象
      * @param charset 字符集编码
      * @return 处理后的对象

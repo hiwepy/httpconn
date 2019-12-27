@@ -1,4 +1,4 @@
-package com.github.vindell.httpconn;
+package com.github.hiwepy.httpconn;
 
 public abstract class ContentType {
 	

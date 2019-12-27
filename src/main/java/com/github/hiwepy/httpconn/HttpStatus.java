@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2010-2020, vindell (hnxyhcwdl1003@163.com).
+ * Copyright (c) 2010-2020, hiwepy (hnxyhcwdl1003@163.com).
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -13,13 +13,13 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.github.vindell.httpconn;
+package com.github.hiwepy.httpconn;
 
 import java.net.HttpURLConnection;
 
 /**
  * Constants enumerating the HTTP status codes.
- * @author 		： <a href="https://github.com/vindell">vindell</a>
+ * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
  */
 public class HttpStatus {
 

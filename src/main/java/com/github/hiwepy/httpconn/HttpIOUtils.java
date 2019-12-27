@@ -1,4 +1,4 @@
-package com.github.vindell.httpconn;
+package com.github.hiwepy.httpconn;
 
 
 import java.io.BufferedInputStream;
@@ -23,7 +23,7 @@ import java.net.URLConnection;
 
 /**
  * 扩展org.apache.commons.io.IOUtils工具对象
- * @author 		： <a href="https://github.com/vindell">vindell</a>
+ * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
  */
 public abstract class HttpIOUtils extends org.apache.commons.io.IOUtils{
 	

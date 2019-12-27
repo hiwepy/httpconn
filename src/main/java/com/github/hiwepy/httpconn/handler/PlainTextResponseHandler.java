@@ -1,11 +1,11 @@
-package com.github.vindell.httpconn.handler;
+package com.github.hiwepy.httpconn.handler;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
 
-import com.github.vindell.httpconn.HttpIOUtils;
-import com.github.vindell.httpconn.HttpStatus;
-import com.github.vindell.httpconn.exception.HttpResponseException;
+import com.github.hiwepy.httpconn.HttpIOUtils;
+import com.github.hiwepy.httpconn.HttpStatus;
+import com.github.hiwepy.httpconn.exception.HttpResponseException;
 
 public class PlainTextResponseHandler implements ResponseHandler<String> {
 

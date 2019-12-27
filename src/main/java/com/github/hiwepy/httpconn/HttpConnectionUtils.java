@@ -1,4 +1,4 @@
-package com.github.vindell.httpconn;
+package com.github.hiwepy.httpconn;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -12,12 +12,12 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.github.vindell.httpconn.handler.ResponseHandler;
+import com.github.hiwepy.httpconn.handler.ResponseHandler;
 
 /**
  * 
  * 使用java内置HttpURLConnection对象进行get,post方式的请求
- * @author 		： <a href="mailto:hnxyhcwdl1003@163.com">vindell</a>
+ * @author 		： <a href="mailto:hnxyhcwdl1003@163.com">hiwepy</a>
  * <pre>
  * 总结：
  * a:) HttpURLConnection的connect()函数，实际上只是建立了一个与服务器的tcp连接，并没有实际发送http请求。
@@ -282,7 +282,7 @@ public class HttpConnectionUtils {
 	
 	/**
 	 * 在一次请求发送后获取SessionID
-	 * @author 		： <a href="https://github.com/vindell">vindell</a>
+	 * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
 	 * @param httpConn HttpURLConnection对象
 	 * @return
 	 */

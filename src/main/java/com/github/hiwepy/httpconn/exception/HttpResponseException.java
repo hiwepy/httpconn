@@ -1,10 +1,10 @@
-package com.github.vindell.httpconn.exception;
+package com.github.hiwepy.httpconn.exception;
 
 import java.io.IOException;
 
 /**
  * 请求异常
- * @author 		： <a href="https://github.com/vindell">vindell</a>
+ * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
  */
 @SuppressWarnings("serial")
 public class HttpResponseException extends IOException {

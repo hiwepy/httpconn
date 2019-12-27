@@ -1,4 +1,4 @@
- package com.github.vindell.httpconn.handler;
+ package com.github.hiwepy.httpconn.handler;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,13 +12,13 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-import com.github.vindell.httpconn.HttpIOUtils;
-import com.github.vindell.httpconn.HttpStatus;
-import com.github.vindell.httpconn.exception.HttpResponseException;
+import com.github.hiwepy.httpconn.HttpIOUtils;
+import com.github.hiwepy.httpconn.HttpStatus;
+import com.github.hiwepy.httpconn.exception.HttpResponseException;
 
 /**
  * http请求响应处理：返回org.w3c.dom.Document对象
- * @author 		： <a href="https://github.com/vindell">vindell</a>
+ * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
  */
 public class XMLResponseHandler implements ResponseHandler<Document> {
 
