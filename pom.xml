@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.hiwepy</groupId>
 	<artifactId>httpconn</artifactId>
-	<version>1.0.2-SNAPSHOT</version>
+	<version>1.0.0.RELEASE</version>
 	<description>HttpURLConnection Extend</description>
 	<name>${project.groupId}:${project.artifactId}</name>
 	<url>https://github.com/Jeebiz/${project.artifactId}</url>
@@ -369,9 +369,9 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<commons-io.version>2.5</commons-io.version>
-		<dom4j.version>1.6.1</dom4j.version>
-		<fastjson.version>1.2.33</fastjson.version>
+		<commons-io.version>2.6</commons-io.version>
+		<dom4j.version>2.1.1</dom4j.version>
+		<fastjson.version>1.2.62</fastjson.version>
 		<java.version>1.7</java.version>
 		<jdom.version>2.0.2</jdom.version>
 		<junit.version>4.12</junit.version>
@@ -392,7 +392,7 @@
 		<maven-source-plugin.version>3.0.1</maven-source-plugin.version>
 		<maven-nexus-staging-plugin.version>1.6.8</maven-nexus-staging-plugin.version>
 		<metrics.version>3.2.2</metrics.version>
-		<xstream.version>1.4.8</xstream.version>
+		<xstream.version>1.4.11.1</xstream.version>
 	</properties>
 
 	<dependencyManagement>
@@ -433,9 +433,9 @@
 			</dependency>
 			<!-- Dom4j是一个Java的XML API，类似于jdom，用来读写XML文件的工具包。 -->
 			<dependency>
-				<groupId>dom4j</groupId>
-				<artifactId>dom4j</artifactId>
-				<version>${dom4j.version}</version>
+			    <groupId>org.dom4j</groupId>
+			    <artifactId>dom4j</artifactId>
+			    <version>${dom4j.version}</version>
 			</dependency>
 			<!--JDOM是一种使用 XML（标准通用标记语言下的一个子集） 的独特 Java 工具包，。它的设计包含 Java 语言的语法乃至语义。 -->
 			<dependency>
@@ -497,8 +497,8 @@
 		</dependency>
 		<!-- Dom4j是一个Java的XML API，类似于jdom，用来读写XML文件的工具包。 -->
 		<dependency>
-			<groupId>dom4j</groupId>
-			<artifactId>dom4j</artifactId>
+			<groupId>org.dom4j</groupId>
+		    <artifactId>dom4j</artifactId>
 			<scope>provided</scope>
 		</dependency>
 		<!-- XStream是 thoughtworks开发的开源框架，用于实现XML数据于Java对象、Json数据的转换 -->
