@@ -33,23 +33,16 @@ public class XMLResponseHandler implements ResponseHandler<Document> {
     public Document handleResponse(HttpURLConnection httpConn, String charset) throws IOException {
 		int status = httpConn.getResponseCode();
 		if (status >= HttpURLConnection.HTTP_OK && status < HttpURLConnection.HTTP_MULT_CHOICE) {
-			InputStream input = null;
-			InputStreamReader reader = null;
-			try {
+			try(// 从request中取得输入流
+		            InputStream input = httpConn.getInputStream(); 
+		            InputStreamReader reader = new InputStreamReader(input, charset);) {
 	            DocumentBuilder docBuilder = factory.newDocumentBuilder();
-				// 从request中取得输入流
-				input = httpConn.getInputStream(); 
-				reader = new InputStreamReader(input, charset);
 				// 响应内容
 				return docBuilder.parse(HttpIOUtils.toString(reader));
 	        } catch (ParserConfigurationException ex) {
 	            throw new IllegalStateException(ex);
 	        } catch (SAXException ex) {
 	            throw new HttpResponseException("Malformed XML document", ex);
-	        } finally{
-				// 释放资源
-				HttpIOUtils.closeQuietly(input);
-				HttpIOUtils.closeQuietly(reader);
 			}
 		} else {
 			String error = HttpIOUtils.toInputText(httpConn.getErrorStream(), charset);
