@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 
-
 import com.github.hiwepy.httpconn.HttpIOUtils;
 import com.github.hiwepy.httpconn.HttpStatus;
 import com.github.hiwepy.httpconn.exception.HttpResponseException;
@@ -28,21 +27,13 @@ public class FileResponseHandler implements ResponseHandler<File> {
 	public File handleResponse(HttpURLConnection httpConn, String charset) throws IOException {
 		int status = httpConn.getResponseCode();
 		if (status >= HttpURLConnection.HTTP_OK && status < HttpURLConnection.HTTP_MULT_CHOICE) {
-			InputStream input = null;
-			FileOutputStream output = null;
 			// 先存为临时文件，等全部下完再改回原来的文件名
 			File storeFile = new File(destFile.getParent() , destFile.getName()  + ".tmp"); 
-			try {
-				output = new FileOutputStream(storeFile);
-				// 从request中取得输入流
-				input = httpConn.getInputStream();
+			try(FileOutputStream output = new FileOutputStream(storeFile);
+					InputStream input = httpConn.getInputStream();) {
 				HttpIOUtils.copy(input, output);
-			} finally {
-				// 释放资源
-				HttpIOUtils.closeQuietly(input);
-				HttpIOUtils.closeQuietly(output);
+				storeFile.renameTo(destFile);
 			}
-			storeFile.renameTo(destFile);
 			return destFile;
 		} else {
 			String error = HttpIOUtils.toInputText(httpConn.getErrorStream(), charset);
